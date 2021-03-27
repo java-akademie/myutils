@@ -10,7 +10,7 @@ import (
 
 // Version : which tools used
 func Version() {
-	fmt.Println("gotools 0.0.0 (in github not yet available)")
+	fmt.Println("gotools 0.0.0 (in github gespeichert)")
 }
 
 // H1 : prints a heading like html <h1>
