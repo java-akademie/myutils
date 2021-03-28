@@ -1,5 +1,7 @@
+// ------------------------------
 // author:	Johann Mildner, Basel
 // date:	January 2021
+// ------------------------------
 
 // Package mytools contains some function
 package myutils
