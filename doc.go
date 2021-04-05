@@ -3,7 +3,7 @@
 // date:	January 2021
 // ------------------------------
 
-// Package mytools contains some function
+// Package mytools contains some useful functions
 package myutils
 
 // this function prevents warnings (unused functions)
