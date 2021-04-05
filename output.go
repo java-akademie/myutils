@@ -10,7 +10,7 @@ import (
 
 // Version : which tools used
 func Version() {
-	fmt.Println("myutils Version: 1.0.0 (from github)")
+	fmt.Println("myutils Version: 1.0.1 (in github not yet available)")
 }
 
 // H1 : prints a heading like html <h1>
@@ -80,22 +80,30 @@ func Description(msg ...string) {
 	}
 }
 
-// ShowObjects : for objects show kind, type and value type (one or many)
-func ShowObjects(arr ...interface{}) {
-	for _, a := range arr { // index not used
-		k := reflect.ValueOf(a).Kind().String()
-		t := reflect.TypeOf(a)
-		fmt.Printf("Kind: %-8v Type: %-10v Value: %v \n",
-			k, t, a,
-		)
+// ShowObjects : for objects show objName, kind, type and value
+func ShowObjects(object ...interface{}) {
+	for _, o := range object {
+		ShowObject("", o)
 	}
 }
 
-// ShowSlice : for a slice show kind, type, capacity, length and value
-func ShowSlice(a interface{}, cap, len int) {
-	k := reflect.ValueOf(a).Kind().String()
-	t := reflect.TypeOf(a)
-	fmt.Printf("Kind: %-8v Type: %-10v Cap: %-3v Len: %-3v Value: %v \n",
-		k, t, cap, len, a,
-	)
+// ShowObject : for objects show objName, kind, type and value
+func ShowObject(objName string, object interface{}) {
+	k := reflect.ValueOf(object).Kind().String()
+	t := reflect.TypeOf(object)
+	if objName == "" {
+		format := "Kind: %-8v Type: %-10v Value: %v \n"
+		fmt.Printf(format, k, t, object)
+	} else {
+		format := "%-5v - Kind: %-8v Type: %-10v Value: %v \n"
+		fmt.Printf(format, objName, k, t, object)
+	}
+}
+
+// ShowSlice : for slices show objName, kind, type, capacity, length and value
+func ShowSlice(objName string, object interface{}, cap, len int) {
+	k := reflect.ValueOf(object).Kind().String()
+	t := reflect.TypeOf(object)
+	format := "%-5v - Kind: %-8v Type: %-10v Cap: %-3v Len: %-3v Value: %v \n"
+	fmt.Printf(format, objName, k, t, cap, len, object)
 }

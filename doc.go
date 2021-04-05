@@ -23,5 +23,5 @@ func _() {
 	StringToInteger("xxx")
 	IFormat(0, 0, "")
 	ShowObjects("xxx")
-	ShowSlice(1, 1, 1)
+	ShowSlice("", "xxx", 1, 1)
 }
