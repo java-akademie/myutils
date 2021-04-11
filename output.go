@@ -10,7 +10,7 @@ import (
 
 // Version : which tools used
 func Version() {
-	fmt.Println("myutils Version: 1.0.0 (comes from github)")
+	fmt.Println("myutils Version: 1.0.2 (from github)")
 }
 
 // H1 : prints a heading like html <h1>
